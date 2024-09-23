@@ -1,5 +1,7 @@
 /* global */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+/* ff8b9a */
+/* f79eb0 */
 
 /* =============================================== */
 /* MENU */
@@ -40,7 +42,7 @@
 }
 
 .top-menu-buttons {
-    background-color: #23b3b8;
+    background-color: #f79eb0;
     /* background-color: #616161; */
 }
 
@@ -63,6 +65,14 @@
 .grid-menu-right-cell {
     background-color: #ffffff;
 }
+
+/* .grid-menu-mid-cell {
+    height: 100%;
+} */
+
+/* .grid-menu-mid-cell ul {
+    height: auto;
+} */
 
 .grid-menu-mid-cell a {
     padding-right: 8px;
@@ -176,7 +186,7 @@
 
 .full-width-banner .grid-container input[type="submit"] {
     font-size: 20px; /* Increase font size for submit button */
-    background-color: #23b3b8;
+    background-color: #f79eb0;
     color: white;
     border: none;
     border-radius: 4px;
@@ -215,9 +225,11 @@ form {
 } */
 
 .logo {
-    width: 80%; /* or a specific percentage that suits your design */
-    max-width: 90px; /* Ensures it doesn't get too large */
+    width: 90%; /* or a specific percentage that suits your design */
+    max-width: 100px; /* Ensures it doesn't get too large */
     height: auto; /* Keeps the aspect ratio intact */
+    /* padding: 2px; */
+    /* padding-top: 2px; */
 }
 
 /* @media (max-width: 768px) {
@@ -235,9 +247,11 @@ form {
 } */
 
 img {
-    border-radius: 8px;
+    border-radius: 28px;
     max-width: 33%;
     height: auto;
+    padding: 4px;
+
 }
 
 /* ================================================= */
@@ -265,7 +279,7 @@ body {
 }
 
 a {
-    color: #23b3b8;
+    color: #f79eb0;
     text-decoration: none;
 }
 
