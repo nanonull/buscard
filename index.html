@@ -9,38 +9,44 @@
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>One Page Site</title>
+
+    <link rel="stylesheet" href="language/language.css">
+    <script 
+        id="language_script" 
+        data-languages="uk,en" 
+        data-debug="0"
+        src="/language/language.js">
+    </script>
 </head>
 
    
 <body>
-
-        
-   
     <div class="top-menu">
         
         <div class="grid-menu">
             <div class="grid-menu-left-cell">
-                <img class="logo" src="logo-3.jpg" alt="photo1">
+                <img class="logo" src="logo-3.jpg" alt="logo">
             </div>
             <div class="grid-menu-mid-cell">
                 <ul class="top-menu-contacts">
-                    <a href="tel:0991234567" class="phone"><i class="fa fa-phone" aria-hidden="true"></i>
-                        <i>0991234567</i>
+                    <a href="https://www.instagram.com/surrogate_mother_1?igsh=dWJ4Y216aGZlcTBk"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/surrogate_M"><i class="fab fa-telegram"></i></a>
+                    <a href="tel:+380635933793" class="phone"><i class="fa fa-phone" aria-hidden="true"></i>
+                        <i class="text">+380635933793</i>
                     </a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="tel:+380966290266" class="phone"><i class="fa fa-phone" aria-hidden="true"></i>
+                        <i class="text">+380966290266</i>
+                    </a>
                 </ul>
                 <ul class="top-menu-buttons">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">Contact me</a></li>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#contact">Contacts</a></li>
                     
                 </ul>
             </div>
             <div class="grid-menu-right-cell">
-                
+                <language data-type="flag"></language>
             </div>
         </div>
     </div>
@@ -51,24 +57,41 @@
             <p>Your description here</p> -->
             <div class="grid-container">
                 <div class="left-column">
-                    <h2>Surrogacy Ukraine</h2>
-                    <p>International Agency for Reproductive Technologies "Gift of Life"</p>
-                    <!-- <p>Contact: info@company.com</p> -->
+                    <h2 lang="en">Surrogacy Ukraine</h2>
+                    <h2 lang="uk">Сурогатне материнство в Україні</h2>
+                    <p lang="en">International Agency for Reproductive Technologies "Gift of Life"</p>
+                    <p lang="uk">Міжнародне агентство репродуктивних технологій «Дар життя»</p>
                 </div>
             
                 <div class="right-column">
-                    <form action="https://formspree.io/f/mrbzwoog" method="POST">
-                        <!-- <label for="name">Name:</label> -->
-                        <input type="text" name="name" placeholder="First and Last name" required>
+                    <form id="contactMeForm" action="https://formspree.io/f/mrbzwoog" method="POST">
+                        <input lang="en" name="name" type="text" placeholder="First and Last name">
+                        <input lang="uk" name="name" type="text" placeholder="Прізвище та Ім'я">
 
-                        <!-- <label for="email">Email:</label> -->
-                        <input type="phone" name="phone" placeholder="Phone" required>
+                        <input lang="en" name="phone" type="phone" placeholder="Phone">
+                        <input lang="uk" name="phone" type="phone" placeholder="Телефон">
 
-                        <!-- <label for="message">Message:</label> -->
-                        <input name="email" placeholder="Email" required>
+                        <input lang="en" name="email" placeholder="Email">
+                        <input lang="uk" name="email" placeholder="Електронна пошта">
 
-                        <input type="submit" value="Submit">
+                        <input lang="en" type="submit" value="Contact me">
+                        <input lang="uk" type="submit" value="Зв'яжіться зі мною">
                     </form>
+                    <script>
+                        const form = document.getElementById('contactMeForm');
+                        form.addEventListener('submit', function(e) {
+                            // remove hidden-by-lang-code fields from the form itself
+                            const inputs = form.querySelectorAll('input, textarea, select');
+                            inputs.forEach(input => {
+                                const style = window.getComputedStyle(input);
+                                if (style.display === 'none' || style.visibility === 'hidden' || input.offsetParent === null) {
+                                    input.parentNode.removeChild(input);
+                                }
+                            });
+                
+                            form.submit();
+                        });
+                    </script>
                 </div>
             </div>
         </div>
@@ -76,39 +99,35 @@
 
     <div class="grid-2">
         <div class="section-details">
-            <!-- <i class="fas fa-code fa-5x white"></i> -->
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quas sint et nihil iusto eius
-                nostrum sit error, repellat optio quisquam! Magnam dolore iusto cumque. Nostrum error iste neque
-                maiores.</p>
-            <img src="photo-1.png" alt="photo1">
-
-            <h2>Experience</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis in maiores autem quidem.</p>
-
-            <h2>Skills</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis in maiores autem quidem obcaecati
-                excepturi! Cupiditate eaque itaque magni voluptatibus neque nobis est dolor? Atque sunt minus ipsa
-                asperiores. At.</p>
-            <h2>Projects</h2>
-            <a href="#">Project 1</a>
-            <a href="#">Project 2</a>
-            <a href="#">Project 3</a>
-            <a href="#">Project 4</a>
-            
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis in maiores autem quidem obcaecati
-                excepturi! Cupiditate eaque itaque magni voluptatibus neque nobis est dolor? Atque sunt minus ipsa
-                asperiores. At.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis in maiores autem quidem obcaecati
-                excepturi! Cupiditate eaque itaque magni voluptatibus neque nobis est dolor? Atque sunt minus ipsa
-                asperiores. At.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis in maiores autem quidem obcaecati
-                excepturi! Cupiditate eaque itaque magni voluptatibus neque nobis est dolor? Atque sunt minus ipsa
-                asperiores. At.</p>
+            <!-- <h2>About</h2> -->
+            <h2></h2>
+            <img class="splitter" src="Windows016_CyanTitle.png" alt="icon">
+            <p></p>
+            <p lang="en">Greetings! Let's get to know each other :)</p>
+            <p lang="uk">Привіт! Давай знайомитись :)</p>
+            <p lang="en">We are the "Gift of Life" agency that helps people find happiness!</p>
+            <p lang="uk">Ми – агенція "Дар життя", яка допомагає людям здобути щастя!</p>
+            <img class="logo-icon" src="logo-3.jpg" alt="icon">
+            <p lang="en">For many couples, surrogate motherhood is the only way to experience the happiness of parenthood.
+                Girls who are ready to help such couples are not just surrogate mothers and donors - they are real Angels!</p>
+            <p lang="uk">Сурогатне материнство для багатьох сімейних пар єдиний спосіб відчути щастя батьківства. 
+                Дівчата, які готові допомогти таким парам, не просто сурогатні матері та донори - вони справжні Янголи!</p>
+            <!-- <img class="logo-icon" src="angel-baby.png" alt="icon"> -->
+            <img class="logo-icon" src="icon-6.png" alt="icon">
+            <p lang="en">Their work and help is priceless!
+                We love and appreciate every surrogate mother and donor very much! You are our pride!
+                We are waiting for each of you in our team.</p>
+            <p lang="uk">Їхня праця та допомога - це безцінно!
+                Ми дуже любимо та цінуємо кожну сурогатну матусю та донора! Ви – наша гордість! 
+                Чекаємо на кожну з Вас у нашій команді.</p>
+            <img class="logo-icon" src="logo-4.png" alt="icon">
+            <p lang="en">We will help you find the right program for you. Support and Consultation 24/7! We work with all countries.</p>
+            <p lang="uk">Допоможемо знайти відповідну для Вас програму. Підтримка та Консультація 24/7! Працюємо з усіма країнами.</p>
+            <img class="logo-icon" src="icon-5.png" alt="icon">
+            <p lang="en">Help families find happiness together and fulfill their dreams!</p>
+            <p lang="uk">Допоможіть сім'ям разом здобути щастя і цим виконати свою мрію!</p>
+            <img class="splitter" src="Windows016_CyanTitle.png" alt="icon">
         </div>
-        <!-- <div class="section-2">
-            
-        </div> -->
     </div>
 
     
