@@ -135,7 +135,7 @@ img {
 /* BANNER WITH INPUT FORM */
 .full-width-banner {
     width: 100%; /* Full width */
-    height: 550px; 
+    height: 590px; 
     /* height: 100%;  */
     background-image: url('back.png'); /* Add your background image here */
     background-size: cover; /* Cover the whole block */
@@ -164,9 +164,16 @@ img {
     margin: 0 auto; /* Center the container */
 }
 
+@media(max-width:720px) {
+    .full-width-banner {
+        height: 690px; 
+    }
+
+}
+
 @media(max-width:645px) {
     .full-width-banner {
-        height: 820px; 
+        height: 890px; 
     }
 
     .full-width-banner .grid-container {
