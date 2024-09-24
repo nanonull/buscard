@@ -173,13 +173,13 @@ img {
 
 @media(max-width:720px) {
     .full-width-banner {
-        height: 690px; 
+        height: 600px; 
     }
 }
 
 @media(max-width:645px) {
     .full-width-banner {
-        height: 890px; 
+        height: 850px; 
     }
 
     .full-width-banner .grid-container {
