@@ -76,6 +76,7 @@
 
 .grid-menu-right-cell language img {
     padding: 2px;
+    margin: 2px;
     /* height: 80%;
     max-width: 40px; */
     width: 50px; 
@@ -118,6 +119,12 @@
     height: auto;
 }
 
+@media(max-width:460px) {
+    .logo {
+        width: 20vw;
+    }
+}
+
 .logo-icon {
     width: 60%; 
     max-width: 60px;
@@ -137,8 +144,8 @@ img {
     width: 100%; /* Full width */
     height: 590px; 
     /* height: 100%;  */
-    background-image: url('back.png'); /* Add your background image here */
-    background-size: cover; /* Cover the whole block */
+    background-image: url('back.png');
+    background-size: cover;
     background-position: center; /* Center the image */
     color: white; /* Make the text stand out */
     display: flex;
@@ -154,13 +161,13 @@ img {
 
 .full-width-banner .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px; /* Add space between the columns */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     width: 100%;
     height: auto;
     align-items: center;
-    min-width: 300px; /* Minimum width of the container */
-    max-width: 600px; /* Maximum width of the container */
+    min-width: 300px;
+    max-width: 600px;
     margin: 0 auto; /* Center the container */
 }
 
@@ -168,7 +175,6 @@ img {
     .full-width-banner {
         height: 690px; 
     }
-
 }
 
 @media(max-width:645px) {
@@ -226,6 +232,12 @@ img {
     border-radius: 8px;
 }
 
+@media(max-width:420px) {
+    .left-column h2 {
+        display: none;
+    }
+}
+
 .right-column {
     border-radius: 8px;
 }
@@ -246,12 +258,28 @@ form {
 }
 
 body {
+    width: 100vw;
+    max-width: none;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #ffffff;
     color: #000611;
 
+}
+
+body {
+    /* Prevent the site from scaling below 320px! */
+    min-width: 320px; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Optional: Set overflow for elements that go beyond the minimum width */
+html, body {
+    overflow-x: auto;
 }
 
 .white {
@@ -270,10 +298,16 @@ a {
 }
 
 .splitter {
-    width: 300%; 
+    width: 280%; 
     max-width: 400px;
     height: 15px;
     margin: auto auto;
+}
+
+@media(max-width:470px) {
+    .splitter {
+        width: 100%; 
+    }
 }
 
 .section-details p {
