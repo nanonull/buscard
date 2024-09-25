@@ -157,7 +157,7 @@ img {
     width: 100%; /* Full width */
     height: 590px; 
     /* height: 100%;  */
-    background-image: url('back.png');
+    background-image: url('img/back.png');
     background-size: cover;
     background-position: center;
     color: white;
