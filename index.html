@@ -22,8 +22,7 @@
 
    
 <body>
-    <div class="top-menu">
-        
+    <div class="top-menu scroll-offset" id="menu">
         <div class="grid-menu">
             <div class="grid-menu-left-cell">
                 <img class="logo" src="logo-3.jpg" alt="logo">
@@ -40,10 +39,12 @@
                     </a>
                 </ul>
                 <ul class="top-menu-buttons">
-                    <li><a href="#home">Contact me</a></li>
-                    <li><a href="#about">About us</a></li>
-                    <li><a href="#contact">Contacts</a></li>
-                    
+                    <li lang="en"><a href="#banner">Contact me</a></li>
+                    <li lang="uk"><a href="#banner">Зв'язок</a></li>
+                    <li lang="en"><a href="#detailsAnchor">About us</a></li>
+                    <li lang="uk"><a href="#detailsAnchor">Про нас</a></li>
+                    <li lang="en"><a href="#footer">Our contacts</a></li>
+                    <li lang="uk"><a href="#footer">Наші контакти</a></li>
                 </ul>
             </div>
             <div class="grid-menu-right-cell">
@@ -52,7 +53,7 @@
         </div>
     </div>
     
-    <div class="full-width-banner">
+    <div class="full-width-banner" id="banner">
         <div class="content">
             <!-- <h1>Your Heading Here</h1>
             <p>Your description here</p> -->
@@ -98,8 +99,7 @@
 
     <div class="grid-2">
         <div class="section-details">
-            <!-- <h2>About</h2> -->
-            <h2></h2>
+            <h2 id="detailsAnchor" class="scroll-offset"> </h2>
             <img class="splitter" src="Windows016_CyanTitle.png" alt="icon">
             <p></p>
             <p lang="en">Greetings! Let's get to know each other :)</p>
@@ -128,6 +128,66 @@
         </div>
     </div>
 
+    <footer class="site-footer">
+        <div id="footer" class="footer-content scroll-offset">
+            <div class="footer-section about">
+                <h3 lang="en">Gift of Life</h3>
+                <h3 lang="uk">Дар Життя</h3>
+                <p lang="en">International agency of surrogacy</p>
+                <p lang="uk">Міжнародна агенція суррогатного материнства</p>
+            </div>
+            <div class="footer-section contact">
+                <h3 lang="en">Our contacts</h3>
+                <h3 lang="uk">Наші контакти</h3>
+                <a href="https://www.instagram.com/surrogate_mother_1?igsh=dWJ4Y216aGZlcTBk"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/surrogate_M"><i class="fab fa-telegram"></i></a>
+                <p>
+                    <a href="tel:+380635933793" class="phone"><i class="fa fa-phone" aria-hidden="true"></i>
+                        <i class="text">+380635933793</i>
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:+380966290266" class="phone"><i class="fa fa-phone" aria-hidden="true"></i>
+                        <i class="text">+380966290266</i>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Gift of Life | All Rights Reserved
+        </div>
+    </footer>
+
+    <script>
+        // this function overrides default scrolling to take dynamic header menu into account
+        document.addEventListener('DOMContentLoaded', function() {
+            // console.log('Script is running');
+
+            const anchors = document.querySelectorAll('a[href^="#"]');
+            // console.log('Selected Anchors:', anchors);
+
+            anchors.forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const extraOffset = 70;
+
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    const bannerMenu = document.querySelector('.menu');
+                    const bannerHeight = bannerMenu ? bannerMenu.offsetHeight : 0;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const currentScroll = window.pageYOffset;
+                    const offsetPosition = elementPosition + currentScroll - bannerHeight - extraOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+    </script>
     
 </body>
 
